@@ -2,35 +2,6 @@ from hospital import Hospital
 from patient import Patient
 from doctors import Doctor
 
-# Create a hospital with capacity for 5 doctors
-hospital = Hospital("San Alejo", capacity=5)
-
-# # Add doctors to the circular rotation
-# hospital.register_doctor(Doctor("Smith"))
-# hospital.register_doctor(Doctor("Lee"))
-# hospital.register_doctor(Doctor("Brown"))
-# hospital.register_doctor(Doctor("Davis"))
-# hospital.register_doctor(Doctor("Taylor"))
-# # Add some patients with different priorities
-# hospital.admit_patient(Patient("Alice", 32, "P001", "Headache", priority=3))
-# hospital.admit_patient(Patient("Bob", 45, "P002", "Chest pain", priority=1))
-# hospital.admit_patient(Patient("Clara", 29, "P003", "Fracture", priority=2))
-# hospital.admit_patient(Patient("David", 60, "P004", "High fever", priority=2))
-# hospital.admit_patient(Patient("Eva", 50, "P005", "Shortness of breath", priority=1))
-
-# # Display the current state
-# hospital.show_status()
-
-# # Attend patients
-# print("\n--- Attending Patients ---")
-# hospital.attend_next_patient()
-# hospital.attend_next_patient()
-# hospital.attend_next_patient()
-
-# # Show updated status
-# print("\n--- Updated Status ---")
-# hospital.show_status()
-
 
 hospital = Hospital("San Alejo", capacity=5)
 while True:
