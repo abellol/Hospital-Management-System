@@ -62,6 +62,7 @@ class Hospital:
     patient.mark_as_treated()
     print(f"Doctor {doctor.name} has finished treating {patient.name}.\n")
 
+    self.doctor_queue.add_doctor(doctor)
     self.history.append((doctor.name, patient.name, patient.symptom))
 
   def show_status(self):
