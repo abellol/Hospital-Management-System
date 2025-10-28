@@ -98,3 +98,69 @@ python main.py
 | **Cola circular**      | Rotar doctores disponibles                   | Asegura uso equilibrado de recursos          |
 | **Cola con prioridad** | Atender primero a los pacientes más urgentes | Mejora la eficiencia del sistema             |
 
+## Diagrama de clases
+```mermaid
+classDiagram
+    class Doctor {
+        - name: str
+        - disponible: bool
+        + show_info()
+        + occupy()
+        + release()
+    }
+
+    class Patient {
+        - name: str
+        - age: int
+        - id: str
+        - symptom: str
+        - priority: int
+        - status: str
+        + __lt__(other)
+        + show_info()
+        + __str__()
+        + update_status(new_status)
+        + mark_as_treated()
+    }
+
+    class CircularQueue {
+        - capacity: int
+        - queue: list
+        - front: int
+        - rear: int
+        - size: int
+        + is_empty(): bool
+        + is_full(): bool
+        + add_doctor(doctor: Doctor)
+        + next_doctor(): Doctor
+        + show_doctors()
+    }
+
+    class PriorityQueue {
+        - queue: list
+        + is_empty(): bool
+        + add_patient(patient: Patient, priority: int)
+        + next_patient(): Patient
+        + show_queue()
+    }
+
+    class Hospital {
+        - name: str
+        - doctor_queue: CircularQueue
+        - patient_queue: PriorityQueue
+        - history: list
+        + register_doctor(doctor: Doctor)
+        + admit_patient(patient: Patient)
+        + attend_next_patient()
+        + show_status()
+        + show_history()
+    }
+
+    %% Relaciones
+    PriorityQueue o-- Patient : "contiene"
+    CircularQueue o-- Doctor : "contiene"
+    Hospital *-- PriorityQueue : "gestiona urgencias"
+    Hospital *-- CircularQueue : "gestiona rotación"
+
+```
+
