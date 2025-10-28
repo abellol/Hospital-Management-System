@@ -1,4 +1,4 @@
-#  Hospital Management System
+#  Sistema de Gestión Hospitalaria
 
 Este proyecto implementa un **sistema de gestión hospitalaria** en Python, utilizando **estructuras de datos avanzadas** como **colas con prioridad**, **colas circulares** y **arreglos dinámicos** para simular el proceso de atención de pacientes en un hospital.
 
